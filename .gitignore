@@ -1,0 +1,11 @@
+*.iml
+composer.lock
+*.phar
+*.log
+*.bak
+*.pid
+*.txt
+
+## Directory-based project format:
+.idea/
+vendor/

@@ -1,0 +1,34 @@
+{
+  "name": "stcer/j-spider",
+  "description": "",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stcer",
+      "email": "7443930@qq.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "jcom\\spider\\" : "src"
+    }
+  },
+
+  "require": {
+    "php": ">=5.4.0",
+    "stcer/jcore" : "dev-master"
+  },
+
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    },
+    {"packagist": false}
+  ],
+
+  "config" : {
+    "secure-http" : false
+  }
+}
