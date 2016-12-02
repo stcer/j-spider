@@ -1,6 +1,9 @@
 <?php
 
-use j\spider\PHtml;
+use jcom\spider\PHtml;
+
+$vendorPath = realpath(__DIR__ . "/../vendor/");
+$loader = include($vendorPath . "/autoload.php");
 
 $url = 'http://php5.9z.cn/go.php?action=regist';
 

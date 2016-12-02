@@ -2,6 +2,9 @@
 
 use jcom\spider\PHtml;
 
+$vendorPath = realpath(__DIR__ . "/../vendor/");
+$loader = include($vendorPath . "/autoload.php");
+
 function test_list(){
     $url = 'http://www.bmlink.com/news/list-26-1.html';
     $rules = array(
