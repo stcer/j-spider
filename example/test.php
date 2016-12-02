@@ -37,7 +37,7 @@ function test_info(){
                 '<h1 class="c_red"> | </h1>',
                 ),
             'pdate' => '<span > | <',
-            'cfrom' => '¿¥‘¥£∫ | &nbsp;'
+            'cfrom' => 'Êù•Ê∫êÔºö | &nbsp;'
             )
         );
     $phtml = new PHtml();
