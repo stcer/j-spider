@@ -67,19 +67,19 @@ class PFilters{
                 $filter = new PFilterRegExpress($tag);
                 
             }elseif(is_numeric(strpos($express, ' | '))){ 
-            // Ë³Ğò
+            // é¡ºåº
             // start char -- stop char
                 $tag = explode(' | ', $express, 2); 
                 $filter = new PFilterRang($tag[0], $tag[1]);
                 
             }elseif(is_numeric(strpos($express, ' : '))){
-            // Á½±ß
+            // ä¸¤è¾¹
             // between start and stop char
                 $tag = explode(' : ', $express, 2);
                 $filter = new PFilterBetween($tag[0], $tag[1]);
                 
             }elseif(is_numeric(strpos($express, ' :: '))){
-            // ·´Ğò
+            // ååº
             // between start and stop char
                 $tag = explode(' :: ', $express, 2);
                 $filter = new PFilterRRang($tag[0], $tag[1]);
@@ -100,7 +100,7 @@ class PFilters{
                 $filter = new PFilterRRang($tag[0], $tag[1], false);
                 
             }elseif(isset(self::$cbMap[$express])){ 
-                // ×¢²á
+                // æ³¨å†Œ
                 $filter = self::$cbMap[$express];
             }
         }
@@ -148,7 +148,7 @@ class PFilters{
 }
 
 /**
-* ÂË¾µ½Ó¿Ú
+* æ»¤é•œæ¥å£
 */
 abstract class PFilter {
     public function filter($content, $url){
@@ -204,7 +204,7 @@ class PFilterRang extends PFilter {
             $isMatch2 = true;
         }
         
-        if($this->mustMatch && !($isMatch1 && $isMatch2)){ // È«Æ¥Åä
+        if($this->mustMatch && !($isMatch1 && $isMatch2)){ // å…¨åŒ¹é…
             return '';
         }
         
@@ -341,7 +341,7 @@ class PFilterImg extends PFilter{
     }
 
     /**
-     * ±£´æÍ¼Æ¬
+     * ä¿å­˜å›¾ç‰‡
      * @param $url
      * @param $baseUrl
      * @return string
@@ -359,7 +359,7 @@ class PFilterImgs extends PFilterImg{
     private $autoRest = true;
 
     /**
-     * Ìæ»»ÄÚÈİÍ¼Æ¬
+     * æ›¿æ¢å†…å®¹å›¾ç‰‡
      * @param $content
      * @param $baseUrl
      * @return mixed

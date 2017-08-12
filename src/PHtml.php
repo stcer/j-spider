@@ -26,12 +26,12 @@ class PCommon {
         }
     }
     
-    // ÉèÖÃÍøÒ³µØÖ·
+    // è®¾ç½®ç½‘é¡µåœ°å€
     function setUrl($url){
         $this->url = $url;
     }
     
-    // ÉèÖÃÊı¾İ¶ÁÈ¡Æ÷
+    // è®¾ç½®æ•°æ®è¯»å–å™¨
     function setReader($reader){
         $this->reader = $reader;
     }
