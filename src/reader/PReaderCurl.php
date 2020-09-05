@@ -1,12 +1,6 @@
 <?php
 # PReaderCurl.php
 
-/**
- * User: Administrator
- * Date: 2020/9/5 0005
- * Time: 下午 14:52
- */
-
 namespace jcom\spider\reader;
 
 /**
@@ -61,6 +55,21 @@ class PReaderCurl
         if (isset($this->_options['fllow'])
             && ($fllow = $this->_options['fllow'])) {
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        }
+
+        if (isset($this->_options['header'])) {
+            $headers = $this->_options['header'];
+            foreach ($headers as $key => $value) {
+                if (!is_numeric($key)) {
+                    unset($headers[$key]);
+                    $headers[] = "{$key}: {$value}";
+                }
+            }
+            if (isset($options[CURLOPT_HTTPHEADER])) {
+                // 合并header
+                $headers = array_merge($options[CURLOPT_HTTPHEADER], $headers);
+            }
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         }
 
         $rs = curl_exec($ch);
